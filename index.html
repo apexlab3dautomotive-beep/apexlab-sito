@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APEX LAB 3D | High-End Motorsport Accessories</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0b0b0c; color: #f3f4f6; }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .bg-carbon {
+            background-color: #0d0d0f;
+            background-image: radial-gradient(#1c1c22 15%, transparent 16%), radial-gradient(#1c1c22 15%, transparent 16%);
+            background-size: 12px 12px;
+            background-position: 0 0, 6px 6px;
+        }
+        /* Pattern Bandiera a Scacchi */
+        .bg-chequered {
+            background-image: repeating-conic-gradient(#18181b 0% 25%, #09090b 0% 50%);
+            background-size: 16px 16px;
+        }
+        /* Effetto bagliore rosso al passaggio del mouse */
+        .glow-hover:hover {
+            box-shadow: 0 0 25px -5px rgba(220, 38, 38, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-carbon min-h-screen flex flex-col justify-between">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-zinc-800/80 bg-black/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <!-- Striscia Bandiera a Scacchi -->
+                <div class="w-8 h-6 bg-chequered rounded border border-zinc-700/60 shadow-inner"></div>
+                <h1 class="font-orbitron text-2xl font-black text-white tracking-wider">APEX <span class="text-red-600">LAB 3D</span></h1>
+            </div>
+            <nav class="space-x-6 text-xs font-semibold uppercase tracking-widest text-zinc-400">
+                <a href="#catalogo" class="hover:text-red-500 transition">Catalogo</a>
+                <a href="#features" class="hover:text-red-500 transition">Qualità 3D</a>
+                <a href="#about" class="hover:text-red-500 transition">Chi Siamo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Banner Principale -->
+    <section class="max-w-7xl mx-auto px-6 pt-16 pb-12 text-center relative overflow-hidden">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-950/50 border border-red-800/50 text-red-400 text-xs font-bold tracking-widest uppercase mb-4">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Stampa 3D ad Alta Precisione
+        </div>
+        <h2 class="font-orbitron text-4xl md:text-6xl font-black text-white tracking-tight mt-1 mb-4">
+            PORTA LA PISTA <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-amber-500">A CASA TUA</span> 🏁
+        </h2>
+        <p class="text-zinc-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Accessori esclusivi e dettagliatissimi progettati per veri appassionati di motorsport. Realizzati in Italia con materiali di grado automotive.
+        </p>
+    </section>
+
+    <!-- Catalogo Prodotti -->
+    <section id="catalogo" class="max-w-7xl mx-auto px-6 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- PRODOTTO 1: F40 KEYHOLDER -->
+        <div class="bg-zinc-900/90 border border-zinc-800/90 rounded-2xl p-6 hover:border-red-600/60 transition-all duration-300 shadow-2xl flex flex-col justify-between glow-hover group">
+            <div>
+                <!-- Galleria Foto F40 -->
+                <div class="mb-5 relative">
+                    <!-- Badge di Stato -->
+                    <span class="absolute top-3 left-3 z-10 bg-black/80 backdrop-blur-md border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                        🔥 Wall Art
+                    </span>
+
+                    <!-- Immagine Principale -->
+                    <div class="w-full h-72 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 flex items-center justify-center mb-3">
+                        <img id="main-f40-img" src="images/f40_wall_render.jpg" alt="F40 Keyholder Ambientato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-4 gap-2">
+                        <button onclick="changeImage('main-f40-img', 'images/f40_wall_render.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/f40_wall_render.jpg" class="w-full h-full object-cover" alt="Garage">
+                        </button>
+                        <button onclick="changeImage('main-f40-img', 'images/f40_front.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/f40_front.jpg" class="w-full h-full object-cover" alt="Frontale">
+                        </button>
+                        <button onclick="changeImage('main-f40-img', 'images/f40_top.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/f40_top.jpg" class="w-full h-full object-cover" alt="Alto">
+                        </button>
+                        <button onclick="changeImage('main-f40-img', 'images/f40_side.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/f40_side.jpg" class="w-full h-full object-cover" alt="Lato">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Prodotto -->
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-red-500 uppercase tracking-widest font-orbitron">Ferrari Legend</span>
+                </div>
+
+                <h3 class="font-orbitron text-2xl font-bold mt-1 text-white">F40 Rear Wall Keyholder</h3>
+                
+                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                    Trasforma il tuo ingresso o garage con l'inconfondibile posteriore della Ferrari F40. Portachiavi da parete unico con 5 ganci rinforzati, scarico triplo e ala aerodinamica.
+                </p>
+
+                <ul class="text-xs text-zinc-400 mt-4 space-y-1.5 border-t border-zinc-800/80 pt-3">
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> 5 Ganci integrati ad alta tenuta</li>
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> Stampa PLA+ Rosso Corsa finitura opaca</li>
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> Kit di montaggio facile a parete incluso</li>
+                </ul>
+            </div>
+
+            <!-- Prezzo e Azione -->
+            <div class="mt-6 flex justify-between items-center border-t border-zinc-800 pt-4">
+                <div>
+                    <span class="text-[10px] uppercase text-zinc-500 block tracking-wider font-semibold">Prezzo promo</span>
+                    <span class="font-orbitron text-2xl font-black text-white">€45.00</span>
+                </div>
+                <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20F40%20Rear%20Wall%20Keyholder" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2 shadow-lg shadow-red-600/30 hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11.5 13.5l-6.7 1.8a2 2 0 0 1-1.4-2.2l1.9-6.7L11.5 2z"/><path d="m11.5 13.5 6.7 1.8"/></svg>
+                    Ordina Ora
+                </a>
+            </div>
+        </div>
+
+        <!-- PRODOTTO 2: BRAKE CALIPER PENHOLDER -->
+        <div class="bg-zinc-900/90 border border-zinc-800/90 rounded-2xl p-6 hover:border-red-600/60 transition-all duration-300 shadow-2xl flex flex-col justify-between glow-hover group">
+            <div>
+                <!-- Galleria Foto Pinza Freno -->
+                <div class="mb-5 relative">
+                    <!-- Badge di Stato -->
+                    <span class="absolute top-3 left-3 z-10 bg-black/80 backdrop-blur-md border border-red-500/30 text-red-400 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">
+                        ⚡ Desk Setup
+                    </span>
+
+                    <!-- Immagine Principale -->
+                    <div class="w-full h-72 bg-zinc-950 rounded-xl overflow-hidden border border-zinc-800 flex items-center justify-center mb-3">
+                        <img id="main-brake-img" src="images/brake_desk.jpg" alt="Brake Caliper Penholder Setup" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+
+                    <!-- Thumbnails -->
+                    <div class="grid grid-cols-4 gap-2">
+                        <button onclick="changeImage('main-brake-img', 'images/brake_desk.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/brake_desk.jpg" class="w-full h-full object-cover" alt="Desk Setup">
+                        </button>
+                        <button onclick="changeImage('main-brake-img', 'images/brake_left.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/brake_left.jpg" class="w-full h-full object-cover" alt="Profilo">
+                        </button>
+                        <button onclick="changeImage('main-brake-img', 'images/brake_right.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/brake_right.jpg" class="w-full h-full object-cover" alt="Destra">
+                        </button>
+                        <button onclick="changeImage('main-brake-img', 'images/brake_front.jpg')" class="h-14 bg-zinc-950 rounded-lg overflow-hidden border border-zinc-800 hover:border-red-500 focus:border-red-600 transition">
+                            <img src="images/brake_front.jpg" class="w-full h-full object-cover" alt="Retro">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Info Prodotto -->
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-red-500 uppercase tracking-widest font-orbitron">Racing Office</span>
+                </div>
+
+                <h3 class="font-orbitron text-2xl font-bold mt-1 text-white">Brake Caliper Penholder</h3>
+                
+                <p class="text-sm text-zinc-300 mt-3 leading-relaxed">
+                    Portapenne scenografico con pinza freno sportiva e disco autoventilato. L'accessorio da scrivania perfetto per dare grinta alla tua postazione di lavoro o sim-rig.
+                </p>
+
+                <ul class="text-xs text-zinc-400 mt-4 space-y-1.5 border-t border-zinc-800/80 pt-3">
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> Pinza freno Rosso Corsa a rilievo</li>
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> Vano ampio per penne, stilo e utensili</li>
+                    <li class="flex items-center gap-2"><span class="text-red-500 font-bold">✓</span> Base zavorrata anti-ribaltamento</li>
+                </ul>
+            </div>
+
+            <!-- Prezzo e Azione -->
+            <div class="mt-6 flex justify-between items-center border-t border-zinc-800 pt-4">
+                <div>
+                    <span class="text-[10px] uppercase text-zinc-500 block tracking-wider font-semibold">Prezzo promo</span>
+                    <span class="font-orbitron text-2xl font-black text-white">€35.00</span>
+                </div>
+                <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20ordinare%20Brake%20Caliper%20Penholder" target="_blank" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2 shadow-lg shadow-red-600/30 hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11.5 13.5l-6.7 1.8a2 2 0 0 1-1.4-2.2l1.9-6.7L11.5 2z"/><path d="m11.5 13.5 6.7 1.8"/></svg>
+                    Ordina Ora
+                </a>
+            </div>
+        </div>
+
+        <!-- PRODOTTO 3: PRESTO IN ARRIVO (MISTERIOSO SOTTO IL TELO) -->
+        <div class="bg-zinc-900/90 border border-zinc-800/90 rounded-2xl p-6 transition-all duration-300 shadow-2xl flex flex-col justify-between group relative overflow-hidden">
+            <div>
+                <!-- Copertura Telo e Grafica -->
+                <div class="mb-5 relative">
+                    <!-- Badge Animato -->
+                    <span class="absolute top-3 left-3 z-10 bg-red-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full animate-pulse shadow-lg shadow-red-600/50">
+                        🔒 Presto In Arrivo
+                    </span>
+
+                    <!-- Immagine/Grafica Telo Rossonero -->
+                    <div class="w-full h-72 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 rounded-xl overflow-hidden border border-zinc-800 flex flex-col items-center justify-center p-6 text-center relative group-hover:border-red-600/40 transition duration-500">
+                        
+                        <!-- Siluetta Telo e Icona Rivelazione -->
+                        <div class="relative z-10 flex flex-col items-center">
+                            <div class="w-20 h-20 rounded-full bg-red-600/10 border border-red-600/30 flex items-center justify-center text-3xl mb-3 text-red-500 group-hover:scale-110 transition duration-300">
+                                🏎️
+                            </div>
+                            <span class="font-orbitron font-black text-xl text-zinc-200 tracking-wider">PROJECT X</span>
+                            <span class="text-xs text-red-500 font-bold uppercase tracking-widest mt-1">Sotto Il Telo</span>
+                        </div>
+
+                        <!-- Effetto Sfondo Scurito con Sfumature Racing -->
+                        <div class="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-red-600/10 rounded-full blur-2xl"></div>
+                    </div>
+
+                    <!-- Placeholder Miniature Bloccate -->
+                    <div class="grid grid-cols-4 gap-2 opacity-40">
+                        <div class="h-14 bg-zinc-950 rounded-lg border border-zinc-800 flex items-center justify-center text-xs text-zinc-600 font-mono">?</div>
+                        <div class="h-14 bg-zinc-950 rounded-lg border border-zinc-800 flex items-center justify-center text-xs text-zinc-600 font-mono">?</div>
+                        <div class="h-14 bg-zinc-950 rounded-lg border border-zinc-800 flex items-center justify-center text-xs text-zinc-600 font-mono">?</div>
+                        <div class="h-14 bg-zinc-950 rounded-lg border border-zinc-800 flex items-center justify-center text-xs text-zinc-600 font-mono">?</div>
+                    </div>
+                </div>
+
+                <!-- Info Prodotto -->
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest font-orbitron">Secret Drop</span>
+                </div>
+
+                <h3 class="font-orbitron text-2xl font-bold mt-1 text-zinc-300">Nuova Creazione Top Secret</h3>
+                
+                <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+                    Stiamo ultimando la prototipazione del nostro prossimo accessorio definitivo. Una creazione esclusiva in stampa 3D ad alta precisione che rivoluzionerà la tua passione.
+                </p>
+
+                <ul class="text-xs text-zinc-500 mt-4 space-y-1.5 border-t border-zinc-800/80 pt-3">
+                    <li class="flex items-center gap-2"><span class="text-zinc-600 font-bold">🔒</span> Prototipazione in corso nei laboratori</li>
+                    <li class="flex items-center gap-2"><span class="text-zinc-600 font-bold">🔒</span> Tiratura limitata al lancio</li>
+                    <li class="flex items-center gap-2"><span class="text-zinc-600 font-bold">🔒</span> Anteprima riservata agli iscritti</li>
+                </ul>
+            </div>
+
+            <!-- Azione Notifica -->
+            <div class="mt-6 flex justify-between items-center border-t border-zinc-800 pt-4">
+                <div>
+                    <span class="text-[10px] uppercase text-zinc-500 block tracking-wider font-semibold">Disponibilità</span>
+                    <span class="font-orbitron text-lg font-bold text-red-500">COMING SOON</span>
+                </div>
+                <a href="https://wa.me/393331234567?text=Ciao!%20Vorrei%20essere%20avvisato%20quando%20uscirà%20il%20nuovo%20prodotto%20in%20arrivo" target="_blank" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 hover:text-white font-bold px-4 py-2.5 rounded-xl text-sm transition-all flex items-center gap-2 border border-zinc-700">
+                    Avvisami al lancio 🔔
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Sezione Garanzie / Features -->
+    <section id="features" class="border-t border-b border-zinc-800/80 bg-black/40 py-12 mb-16 relative">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-4">
+                <div class="w-12 h-12 bg-red-600/10 border border-red-600/30 text-red-500 rounded-xl flex items-center justify-center mx-auto mb-3 font-orbitron font-bold text-xl">🏁</div>
+                <h4 class="font-orbitron text-white font-bold text-lg mb-1">Qualità FDM Premium</h4>
+                <p class="text-xs text-zinc-400">Stampiamo a layer sottilissimi per garantire finiture lisce e dettagli ultra-nitidi.</p>
+            </div>
+            <div class="p-4">
+                <div class="w-12 h-12 bg-red-600/10 border border-red-600/30 text-red-500 rounded-xl flex items-center justify-center mx-auto mb-3 font-orbitron font-bold text-xl">🇮🇹</div>
+                <h4 class="font-orbitron text-white font-bold text-lg mb-1">Made in Italy</h4>
+                <p class="text-xs text-zinc-400">Ogni oggetto viene assemblato e rifinito a mano nei nostri laboratori.</p>
+            </div>
+            <div class="p-4">
+                <div class="w-12 h-12 bg-red-600/10 border border-red-600/30 text-red-500 rounded-xl flex items-center justify-center mx-auto mb-3 font-orbitron font-bold text-xl">📦</div>
+                <h4 class="font-orbitron text-white font-bold text-lg mb-1">Spedizione Protetta</h4>
+                <p class="text-xs text-zinc-400">Imballaggio rinforzato a prova di urto e tracciamento in tempo reale.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-zinc-800/80 bg-black/90 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500">
+            <div class="flex items-center gap-2">
+                <span class="font-orbitron font-bold text-white">APEX LAB 3D</span>
+                <span>• © 2026 Tutti i diritti riservati</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-red-500 transition">TikTok</a>
+                <a href="#" class="hover:text-red-500 transition">Instagram</a>
+                <a href="#" class="hover:text-red-500 transition">Supporto WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Galleria -->
+    <script>
+        function changeImage(elementId, newSrc) {
+            document.getElementById(elementId).src = newSrc;
+        }
+    </script>
+</body>
+</html>
